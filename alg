@@ -24,12 +24,15 @@ public class Tres2 {
         }
         while (n != 0);
 
+//      with this for loop, I receiving somth. like copy of  ArrayList to array
         int[] array = new int[arrayList.size()];
         for(int i = 0; i < arrayList.size(); i++){
             array[i] = arrayList.get(i);
         }
+//      With method copyOfRange I dividing array to two halves and collect them into different arrays
         int[] arrayPart1 = Arrays.copyOfRange(array,0,array.length /2);
         int[] arrayPart2 = Arrays.copyOfRange(array, array.length /2 ,array.length);
+//        this cobination stream with sum lets us to compare sums of arrayPart1 and arrayPart2 and return result
         if (Arrays.stream(arrayPart1).sum() == Arrays.stream(arrayPart2).sum()){
             System.out.println(true);
             return true;
